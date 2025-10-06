@@ -1,0 +1,47 @@
+/* styles.css */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e0e0e0; /* Немного более темный фон */
+    font-family: 'Arial', sans-serif; /* Изменение шрифта для улучшения читаемости */
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px; /* Увеличиваем отступ между ячейками */
+    padding: 10px; /* Добавляем внутренний отступ */
+    background-color: #088edc; /* Белый фон для доски */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень для создания глубины */
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #06146f;
+    border-radius: 5px; /* Закругленные углы ячеек */
+    position: relative;
+    overflow: hidden; /* Скрываем изображения, выходящие за пределы ячейки */
+    transition: transform 0.2s; /* Плавный переход при наведении */
+}
+
+.cell:hover {
+    transform: scale(1.05); /* Увеличиваем ячейку при наведении */
+    border-color: #2ede06; /* Изменяем цвет границы при наведении */
+}
+
+.cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Обеспечиваем, чтобы изображение заполняло ячейку */
+    transition: opacity 0.3s; /* Плавный переход для изображений */
+}
+
+.cell img.hidden {
+    opacity: 0; /* Скрываем изображение с помощью класса */
+}
