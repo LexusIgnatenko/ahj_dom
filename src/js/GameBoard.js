@@ -24,7 +24,7 @@ class GameBoard {
       const itemBoard = document.createElement("div");
       itemBoard.className = "cell";
       itemBoard.id = `cell${i}`;
-      board.appendChild(itemBoard);
+      board.append(itemBoard);
     }
 
     this.randomImg();
@@ -46,7 +46,7 @@ class GameBoard {
 
       const currentCell = document.getElementById(`cell${newIndex}`);
       if (currentCell) {
-        currentCell.appendChild(this.imageElement.cloneNode()); // Перемещаем изображение в новую ячейку
+        currentCell.append(this.imageElement.cloneNode()); // Перемещаем изображение в новую ячейку
       }
 
       this.previousIndexCell = newIndex; // Обновляем предыдущую ячейку
