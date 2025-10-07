@@ -30,7 +30,7 @@ class GameBoard {
       const itemBoard = document.createElement("div");
       itemBoard.className = "cell";
       itemBoard.id = `cell${i}`;
-      board.appendChild(itemBoard);
+      board.append(itemBoard);
     }
 
     this.randomImg();
@@ -52,7 +52,7 @@ class GameBoard {
 
       const currentCell = document.getElementById(`cell${newIndex}`);
       if (currentCell) {
-        currentCell.appendChild(this.imageElement.cloneNode()); // Перемещаем изображение в новую ячейку
+        currentCell.append(this.imageElement.cloneNode()); // Перемещаем изображение в новую ячейку
       }
 
       this.previousIndexCell = newIndex; // Обновляем предыдущую ячейку
@@ -125,7 +125,7 @@ gameBoard.drawBoard();
 /******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
 /******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	}();
 /******/ 	
